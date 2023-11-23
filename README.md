@@ -102,7 +102,7 @@ var query struct {
 		Login          githubv4.String
 		CreatedAt      githubv4.DateTime
 		IsBountyHunter githubv4.Boolean
-		BioHTML        githubv4.HTML
+		BioHTML        githubv4.HTML `graphql:"bioHTML"`
 		WebsiteURL     githubv4.URI
 	}
 }
@@ -123,7 +123,7 @@ var query struct {
 		Login          string    // E.g., "gopher".
 		CreatedAt      time.Time // E.g., time.Date(2017, 5, 26, 21, 17, 14, 0, time.UTC).
 		IsBountyHunter bool      // E.g., true.
-		BioHTML        string    // E.g., `I am learning <a href="https://graphql.org">GraphQL</a>!`.
+		BioHTML        string    `graphql:"bioHTML"` // E.g., `I am learning <a href="https://graphql.org">GraphQL</a>!`.
 		WebsiteURL     string    // E.g., "https://golang.org".
 	}
 }
@@ -142,7 +142,7 @@ var query struct {
 		Login          string        // E.g., "gopher".
 		CreatedAt      string        // E.g., "2017-05-26T21:17:14Z".
 		IsBountyHunter MyBoolean     // E.g., MyBoolean(true).
-		BioHTML        template.HTML // E.g., template.HTML(`I am learning <a href="https://graphql.org">GraphQL</a>!`).
+		BioHTML        template.HTML `graphql:"bioHTML"` // E.g., template.HTML(`I am learning <a href="https://graphql.org">GraphQL</a>!`).
 		WebsiteURL     template.URL  // E.g., template.URL("https://golang.org").
 	}
 }
